@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+    <title>Multi platform Application for Pet Adaption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#fff9e6;
+	    margin: 0;
+	    padding: 0;
+        }
+        .navbar {
+            background-color: #f4c542;
+            padding: 10px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar {
+            margin: 0;
+        }
+        .navbar input {
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background:-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+        }
+        .profile img {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffe0b2;
+            padding-bottom: 20px;
+         }
+         .profile img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+         }
+         .profile-info {
+             display: flex;
+             flex-direction: column;
+         }
+         .profile-info h2 {
+             margin: 0;
+         }
+         .post-form {
+             display: flex;
+             flex-direction: column;
+             margin-bottom: 20px;
+         }
+         .post-form input, .post-form textarea, .post-form buttom {
+              padding: 10px;
+              margin: 5px 0;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+         }
+         .post-form buttom {
+              background-color: #f4c542;
+              color: #fff;
+              border: none;
+         }
+         .post-form buttom:hover {
+              background-color: #e5b02d;
+         }
+         .post-list {
+              list-style: none;
+              padding: 0;
+         }
+         .post-list .post {
+              background-color: #fff4db;
+              margin: 10px 0;
+              padding: 15px;
+              border-radius: 4px;
+              box-shadow: 0 0 5px rgba(0, 0, 0, 0, 1);
+         }
+         .post-list .post h3 {
+              margin-top: 0;
+         }
+     </style>
+</head>
+<body> 
+    <div class="navbar">
+        <h1>Multi Platform Application for Pet Adaption</h1>
+        <input type="text" placeholder="Search for pet....">
+    </div>
+    <div class="container">
+        <!-- Owner Profile Section -->
+        <div class="profile">
+            <img src="https:pet.adaptiom.jpg="Profile Picture"> 
+            <div class="profile-info">
+                 <h2>Danielle Dela Cruz</h2>
+                 <p>Email: daniell.delacruz.gmail.com</p>
+                 <p>Location: Binan Laguna</p>
+                 <p>Contact: 09367639745</p>
+                 <p>Bio: Passionate about animals and dedicated to help them find loving homes.</p>
+         </div>
+       </div>
+
+       <!-- Post Form Section -->
+       <div class="post-form">
+           <input type="text" id="pet-name" placeholder="Pet Name">
+           <textarea id="pet-description" placeholder="Pet Description"></textarea>
+           <input type="text" id="pet-image" placeholder"Image URL">
+           <button onclick="addPost"()">Post</button>>
+       </div>
+
+        <!-- Post List Section -->
+        <ul class="post-list" id="post-list"></ul>
+       </div>
+
+       <script>
+           function addPost() {
+           const nameInput = document.getElementByID ('pet-name');
+           const descriptionInput = document.getElementById('pet-description');
+           const imageInput = document.getElementById('pet-image');
+           const postList = document.getElementById('post-list');
+
+           const name = nameInput.value.trim();
+           const description = descriptionInput.value.trim();
+           const image = imageInput.value.trim();
+
+           if (name !== "" && description !== "" && !=="") {
+               const post = document.createElement('li');
+               post.classname = 'post';
+               post.innerHTML = `
+                   <h3>${name}</h3>
+                   <p>${description}</p>
+                   <img src="${image}" alt="${name}" style="max-width: 100%;">
+               `;
+               postList.appendChild(post);
+
+               nameInput.value = "";
+               descriptionInput.value = "";
+               imageInput.value = "";
+            }
+         }
+     </script>
+  </body>
+  </html>
+            

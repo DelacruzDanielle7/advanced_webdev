@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /var/www/html/advanced_webdev/summer_2024/exercise-3-apache/jdelacruz/.htpasswd
+Require valid-user
